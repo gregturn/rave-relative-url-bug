@@ -1,0 +1,25 @@
+This project reproduces the problem of Rave handling relative paths.
+
+To run this example, you need the following:
+
+* Java 7 or higher
+* Maven 3
+* Bower
+
+To reproduce:
+
+. Clone this repository
+. `cd /your/path/to/this/repo`
+. `cd src/main/resources/static`
+. `bower install`
+. `cd /base/of/this/repo`
+. `mvn spring-boot:run`
+
+With everything running, you should be able to see the issue at hand.
+
+. Navigate to http://localhost:8080 with your browser.
+. Open JavaScript console. This page should have loaded just fine with Rave REPL on display.
+. Now navigate to the link at http://localhost:8080/subUrl/RaveJS.
+. It will render the page with RaveJS, but the console will show boot.js to not load properly.
+
+Spring MVC will have shifted the local path to */subUrl*. RaveJS picks up and runs with that as the baseURI, which wrecks everything.
