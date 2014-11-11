@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-rave-meta="bower.json">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Spring MVC + Rave</title>
+    <script async="" src="boot.js" />
+</head>
+<body>
+
+    <h1>Greetings from Spring MVC + RaveJS!</h1>
+
+    <h2 th:text="'Hello, ' + ${name} + '!'"></h2>
+
+    <p>
+        This page will probably have failed to load properly (in the JS console), because Rave assumes everything
+        is on the root context.
+    </p>
+
+</body>
+</html>
